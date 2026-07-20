@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>À propos | ETS ELSU & FILS</title>
-    <meta name="description" content="Découvrez l'histoire, la vision et l'équipe d'ETS ELSU & FILS, leader du BTP à Bertoua." />
+    <meta name="description" content="Découvrez l'histoire, la vision et les valeurs d'ETS ELSU & FILS, leader du BTP à Bertoua." />
 
     <!-- Polices -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -79,10 +79,8 @@
         .section-header span { color: var(--secondary); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: 14px; display: block; margin-bottom: 10px; }
         .section-header h2 { font-size: 2.5rem; text-transform: uppercase; }
 
-        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
-        .about-grid img { width: 100%; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
         .about-text h3 { font-size: 1.8rem; margin-bottom: 20px; }
-        .about-text p { margin-bottom: 20px; color: #555; }
+        .about-text p { margin-bottom: 20px; color: #555; max-width: 800px; }
 
         .values-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px,1fr)); gap: 30px; margin-top: 30px; }
         .value-card { background: var(--white); padding: 30px; border-radius: 8px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); text-align: center; transition: 0.3s; }
@@ -110,10 +108,6 @@
         .reveal.active { opacity: 1; transform: translateY(0); }
 
         /* Responsive */
-        @media (max-width: 992px) {
-            .about-grid { grid-template-columns: 1fr; }
-            .page-hero h1 { font-size: 2.8rem; }
-        }
         @media (max-width: 768px) {
             .nav-links { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; width: 100%; background: var(--white); padding: 30px 0; text-align: center; box-shadow: 0 10px 15px rgba(0,0,0,0.1); }
             .nav-links.active { display: flex; }
@@ -156,17 +150,11 @@
             <span>Notre histoire</span>
             <h2>Un héritage de confiance et d'excellence</h2>
         </div>
-        <div class="about-grid reveal">
-            <div>
-                <!-- Image symbolique de chantier (sans personne) -->
-                <img src="https://images.unsplash.com/photo-1541888086425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Chantier de construction" />
-            </div>
-            <div class="about-text">
-                <h3>ELANGA JOSEPH – Fondateur</h3>
-                <p><strong>ELANGA JOSEPH</strong>, ingénieur de formation et passionné par le bâtiment, a fondé ETS ELSU & FILS en 2010 avec la volonté de créer une entreprise locale de référence dans le secteur du BTP et des prestations techniques à Bertoua.</p>
-                <p>Fort de plus de 20 ans d'expérience sur le terrain, il a su fédérer une équipe de techniciens compétents et investir dans des équipements modernes pour répondre aux besoins croissants en infrastructures de la région de l'Est-Cameroun.</p>
-                <p>Son approche humaine, son exigence de qualité et son souci du détail ont permis à l'entreprise de réaliser des centaines de projets, des plus modestes aux plus ambitieux.</p>
-            </div>
+        <div class="about-text reveal" style="max-width: 900px; margin: 0 auto;">
+            <h3>ELANGA JOSEPH – Fondateur</h3>
+            <p><strong>ELANGA JOSEPH</strong>, ingénieur de formation et passionné par le bâtiment, a fondé ETS ELSU & FILS en 2010 avec la volonté de créer une entreprise locale de référence dans le secteur du BTP et des prestations techniques à Bertoua.</p>
+            <p>Fort de plus de 20 ans d'expérience sur le terrain, il a su fédérer une équipe de techniciens compétents et investir dans des équipements modernes pour répondre aux besoins croissants en infrastructures de la région de l'Est-Cameroun.</p>
+            <p>Son approche humaine, son exigence de qualité et son souci du détail ont permis à l'entreprise de réaliser des centaines de projets, des plus modestes aux plus ambitieux.</p>
         </div>
     </div>
 </section>
