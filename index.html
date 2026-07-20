@@ -266,6 +266,11 @@
             object-fit: cover;
             border-radius: 5px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        .expertise-images img:hover {
+            transform: scale(1.02);
         }
         .expertise-images img:nth-child(1) {
             transform: translateY(-20px);
@@ -296,7 +301,7 @@
             font-weight: bold;
         }
 
-        /* ================= SERVICES (CARTES AVEC IMAGES) ================= */
+        /* ================= SERVICES (CARTES AVEC IMAGES EN HAUT) ================= */
         .bg-gray {
             background-color: var(--bg-light);
         }
@@ -307,47 +312,50 @@
         }
         .service-box {
             background: var(--white);
-            padding: 40px 30px;
             border-radius: 5px;
+            overflow: hidden;
             transition: 0.4s;
-            border-bottom: 4px solid transparent;
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-            text-align: center;
+            display: flex;
+            flex-direction: column;
         }
         .service-box:hover {
             transform: translateY(-10px);
-            border-bottom-color: var(--secondary);
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
         }
-        .service-icon {
-            width: 80px;
-            height: 80px;
-            margin: 0 auto 20px auto;
-            border-radius: 50%;
+        .service-image {
+            width: 100%;
+            height: 200px;
             overflow: hidden;
-            background: rgba(255, 140, 0, 0.1);
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            position: relative;
         }
-        .service-icon img {
+        .service-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.4s;
+            transition: transform 0.5s;
+            cursor: pointer;
         }
-        .service-box:hover .service-icon img {
-            transform: scale(1.1);
+        .service-box:hover .service-image img {
+            transform: scale(1.08);
         }
-        .service-box h4 {
+        .service-content {
+            padding: 25px 20px 30px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .service-content h4 {
             font-size: 1.3rem;
             margin-bottom: 15px;
             text-transform: uppercase;
+            color: var(--primary);
         }
-        .service-box p {
+        .service-content p {
             color: #666;
             font-size: 0.95rem;
             margin-bottom: 20px;
+            flex: 1;
         }
         .service-link {
             font-weight: 700;
@@ -358,6 +366,7 @@
             display: inline-flex;
             align-items: center;
             gap: 5px;
+            align-self: flex-start;
         }
         .service-link:hover {
             color: var(--secondary);
@@ -374,6 +383,7 @@
             overflow: hidden;
             border-radius: 5px;
             height: 300px;
+            cursor: pointer;
         }
         .portfolio-item img {
             width: 100%;
@@ -418,7 +428,6 @@
         .portfolio-item:hover .portfolio-overlay p {
             transform: translateY(0);
         }
-        /* cache pour les éléments supplémentaires */
         .portfolio-item.hidden {
             display: none;
         }
@@ -471,6 +480,56 @@
         }
         .quick-form .btn {
             width: 100%;
+        }
+
+        /* ================= LIGHTBOX ================= */
+        .lightbox-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+            cursor: zoom-out;
+        }
+        .lightbox-overlay.active {
+            display: flex;
+        }
+        .lightbox-overlay img {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+            border-radius: 4px;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+            animation: fadeIn 0.3s;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        .lightbox-close {
+            position: absolute;
+            top: 30px;
+            right: 40px;
+            font-size: 40px;
+            color: white;
+            cursor: pointer;
+            font-weight: 300;
+            transition: 0.3s;
+            z-index: 10000;
+        }
+        .lightbox-close:hover {
+            transform: rotate(90deg);
         }
 
         /* ================= FOOTER ================= */
@@ -548,6 +607,9 @@
             .hero h1 {
                 font-size: 3rem;
             }
+            .expertise-images img:nth-child(1) {
+                transform: none;
+            }
         }
         @media (max-width: 768px) {
             .nav-links {
@@ -580,8 +642,8 @@
             .expertise-images {
                 grid-template-columns: 1fr;
             }
-            .expertise-images img:nth-child(1) {
-                transform: none;
+            .services-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -646,9 +708,8 @@
     <section class="section-padding">
         <div class="container expertise-grid">
             <div class="expertise-images reveal">
-                <!-- Images remplacées par des visuels avec des ouvriers africains -->
-                <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Chantier BTP Cameroun" />
-                <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Équipe technique sur chantier" />
+                <img src="https://raw.githubusercontent.com/exaucenapopolo/ETS-ELSU-FILS/refs/heads/main/images/soham-banerjee-SAFF_1rWBqE-unsplash.jpg" alt="Chantier BTP Cameroun" />
+                <img src="https://raw.githubusercontent.com/exaucenapopolo/ETS-ELSU-FILS/refs/heads/main/images/etienne-girardet-sgYamIzhAhg-unsplash.jpg" alt="Équipe technique sur chantier" />
             </div>
             <div class="expertise-text reveal">
                 <span style="color: var(--secondary); font-weight: bold; text-transform: uppercase; letter-spacing: 2px;">Ingénierie & BTP</span>
@@ -664,7 +725,7 @@
         </div>
     </section>
 
-    <!-- ================= NOS SERVICES (avec images) ================= -->
+    <!-- ================= NOS SERVICES (avec images en haut) ================= -->
     <section id="services" class="section-padding bg-gray">
         <div class="container">
             <div class="section-header reveal">
@@ -676,62 +737,74 @@
             <div class="services-grid">
                 <!-- 1. Bâtiment & Gros Œuvre -->
                 <div class="service-box reveal">
-                    <div class="service-icon">
-                        <img src="https://images.unsplash.com/photo-v-195QphDhk?auto=format&fit=crop&w=150&h=150&q=80" alt="Bâtiment" />
+                    <div class="service-image">
+                        <img src="https://raw.githubusercontent.com/exaucenapopolo/ETS-ELSU-FILS/refs/heads/main/images/1.jpg" alt="Bâtiment & Gros Œuvre" />
                     </div>
-                    <h4>Bâtiments & Gros Œuvre</h4>
-                    <p>Construction, réfection et réhabilitation complète de bâtiments résidentiels, administratifs et d'écoles. Terrassement, maçonnerie, fondations et ferraillage.</p>
-                    <a href="services.html" class="service-link">Détails du service →</a>
+                    <div class="service-content">
+                        <h4>Bâtiments & Gros Œuvre</h4>
+                        <p>Construction, réfection et réhabilitation complète de bâtiments résidentiels, administratifs et d'écoles. Terrassement, maçonnerie, fondations et ferraillage.</p>
+                        <a href="services.html" class="service-link">Détails du service →</a>
+                    </div>
                 </div>
 
                 <!-- 2. Froid & Climatisation -->
                 <div class="service-box reveal">
-                    <div class="service-icon">
-                        <img src="https://images.unsplash.com/photo-PRvyVbLwJy0?auto=format&fit=crop&w=150&h=150&q=80" alt="Climatisation" />
+                    <div class="service-image">
+                        <img src="https://raw.githubusercontent.com/exaucenapopolo/ETS-ELSU-FILS/refs/heads/main/images/2.jpg" alt="Froid & Climatisation" />
                     </div>
-                    <h4>Froid & Climatisation</h4>
-                    <p>Étude, achat, installation professionnelle et maintenance (préventive et curative) de tous vos systèmes de climatisation et de traitement de l'air.</p>
-                    <a href="services.html" class="service-link">Détails du service →</a>
+                    <div class="service-content">
+                        <h4>Froid & Climatisation</h4>
+                        <p>Étude, achat, installation professionnelle et maintenance (préventive et curative) de tous vos systèmes de climatisation et de traitement de l'air.</p>
+                        <a href="services.html" class="service-link">Détails du service →</a>
+                    </div>
                 </div>
 
                 <!-- 3. Nettoyage Industriel -->
                 <div class="service-box reveal">
-                    <div class="service-icon">
-                        <img src="https://images.unsplash.com/photo-SnKfmC1I9fU?auto=format&fit=crop&w=150&h=150&q=80" alt="Nettoyage" />
+                    <div class="service-image">
+                        <img src="https://raw.githubusercontent.com/exaucenapopolo/ETS-ELSU-FILS/refs/heads/main/images/3.jpg" alt="Nettoyage Industriel" />
                     </div>
-                    <h4>Nettoyage Industriel</h4>
-                    <p>Interventions spécialisées pour le nettoyage de fin de chantier, l'entretien des locaux industriels, bureaux professionnels et espaces commerciaux.</p>
-                    <a href="services.html" class="service-link">Détails du service →</a>
+                    <div class="service-content">
+                        <h4>Nettoyage Industriel</h4>
+                        <p>Interventions spécialisées pour le nettoyage de fin de chantier, l'entretien des locaux industriels, bureaux professionnels et espaces commerciaux.</p>
+                        <a href="services.html" class="service-link">Détails du service →</a>
+                    </div>
                 </div>
 
                 <!-- 4. Aménagement & Rénovation -->
                 <div class="service-box reveal">
-                    <div class="service-icon">
-                        <img src="https://images.unsplash.com/photo-57ldq9age5U?auto=format&fit=crop&w=150&h=150&q=80" alt="Rénovation" />
+                    <div class="service-image">
+                        <img src="https://raw.githubusercontent.com/exaucenapopolo/ETS-ELSU-FILS/refs/heads/main/images/4.jpg" alt="Aménagement & Rénovation" />
                     </div>
-                    <h4>Aménagement & Rénovation</h4>
-                    <p>Travaux de second œuvre : menuiserie bois et métallique, peinture, pose de carrelage, plomberie sanitaire et rénovation d'espaces intérieurs.</p>
-                    <a href="services.html" class="service-link">Détails du service →</a>
+                    <div class="service-content">
+                        <h4>Aménagement & Rénovation</h4>
+                        <p>Travaux de second œuvre : menuiserie bois et métallique, peinture, pose de carrelage, plomberie sanitaire et rénovation d'espaces intérieurs.</p>
+                        <a href="services.html" class="service-link">Détails du service →</a>
+                    </div>
                 </div>
 
                 <!-- 5. Fournitures de Bureau -->
                 <div class="service-box reveal">
-                    <div class="service-icon">
-                        <img src="https://images.unsplash.com/photo-1589998059171-988d887df646?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&h=150&q=80" alt="Fournitures" />
+                    <div class="service-image">
+                        <img src="https://raw.githubusercontent.com/exaucenapopolo/ETS-ELSU-FILS/refs/heads/main/images/5.jpg" alt="Fournitures de Bureau" />
                     </div>
-                    <h4>Fournitures de Bureau</h4>
-                    <p>Approvisionnement en matériels, mobiliers et équipements bureautiques de haute qualité pour équiper complètement vos espaces administratifs.</p>
-                    <a href="services.html" class="service-link">Détails du service →</a>
+                    <div class="service-content">
+                        <h4>Fournitures de Bureau</h4>
+                        <p>Approvisionnement en matériels, mobiliers et équipements bureautiques de haute qualité pour équiper complètement vos espaces administratifs.</p>
+                        <a href="services.html" class="service-link">Détails du service →</a>
+                    </div>
                 </div>
 
                 <!-- 6. Prestations Techniques -->
                 <div class="service-box reveal">
-                    <div class="service-icon">
-                        <img src="https://images.unsplash.com/photo-VLPUm5wP5Z0?auto=format&fit=crop&w=150&h=150&q=80" alt="Prestations techniques" />
+                    <div class="service-image">
+                        <img src="https://raw.githubusercontent.com/exaucenapopolo/ETS-ELSU-FILS/refs/heads/main/images/erik-mclean-aielvGxZB0g-unsplash.jpg" alt="Prestations Techniques" />
                     </div>
-                    <h4>Prestations Techniques</h4>
-                    <p>Services sur mesure, location d'équipements légers, maintenance générale des infrastructures et accompagnement logistique sur vos projets.</p>
-                    <a href="services.html" class="service-link">Détails du service →</a>
+                    <div class="service-content">
+                        <h4>Prestations Techniques</h4>
+                        <p>Services sur mesure, location d'équipements légers, maintenance générale des infrastructures et accompagnement logistique sur vos projets.</p>
+                        <a href="services.html" class="service-link">Détails du service →</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -770,7 +843,7 @@
                         <p>Second œuvre</p>
                     </div>
                 </div>
-                <!-- 4 (cachée au départ) -->
+                <!-- 4 (cachée) -->
                 <div class="portfolio-item reveal hidden" data-extra>
                     <img src="https://raw.githubusercontent.com/exaucenapopolo/ETS-ELSU-FILS/refs/heads/main/images/maison.jpg" alt="Maison livrée" />
                     <div class="portfolio-overlay">
@@ -861,8 +934,13 @@
                 <div class="footer-col">
                     <h4>Contact Direct</h4>
                     <p>📍 Siège social : Bertoua, Cameroun</p>
-                    <p>📞 Téléphone / WhatsApp : <a href="tel:+237699719840" style="color: var(--secondary);">+237 6 99 71 98 40</a></p>
-                    <p>✉️ Email : <a href="mailto:Contact@elsu.site" style="color: var(--secondary);">Contact@elsu.site</a></p>
+                    <p>
+                        📞 <a href="tel:+237699719840" style="color: var(--secondary);">Téléphone : +237 6 99 71 98 40</a>
+                    </p>
+                    <p>
+                        💬 <a href="https://wa.me/237699719840?text=Bonjour%20ETS%20ELSU%20%26%20FILS%2C%20je%20souhaite%20obtenir%20un%20devis%20pour%20vos%20services." target="_blank" style="color: var(--secondary);">WhatsApp : +237 6 99 71 98 40</a>
+                    </p>
+                    <p>✉️ <a href="mailto:Contact@elsu.site" style="color: var(--secondary);">Contact@elsu.site</a></p>
                 </div>
             </div>
             <div class="footer-bottom">
@@ -871,6 +949,12 @@
             </div>
         </div>
     </footer>
+
+    <!-- ================= LIGHTBOX (MODALE) ================= -->
+    <div class="lightbox-overlay" id="lightbox">
+        <span class="lightbox-close" id="lightboxClose">&times;</span>
+        <img id="lightboxImg" src="" alt="Agrandissement" />
+    </div>
 
     <!-- ================= JAVASCRIPT ================= -->
     <script>
@@ -963,7 +1047,6 @@
                 return;
             }
 
-            // Construction du message
             let message = 'Bonjour ETS ELSU & FILS, je souhaite obtenir un devis pour le service suivant :\n\n';
             message += `▪️ Nom / Entreprise : ${nom}\n`;
             message += `▪️ Service souhaité : ${service}\n`;
@@ -972,14 +1055,41 @@
             }
             message += '\nMerci de me contacter pour plus d\'informations.';
 
-            // Encodage pour URL
             const encoded = encodeURIComponent(message);
-            const phone = '237699719840'; // numéro WhatsApp
+            const phone = '237699719840';
             const url = `https://wa.me/${phone}?text=${encoded}`;
-
-            // Ouverture dans un nouvel onglet
             window.open(url, '_blank');
         }
+
+        // 7. LIGHTBOX – zoom sur toutes les images avec classe "clickable-zoom"
+        // On ajoute la classe à toutes les images concernées : celles des services, expertise, portfolio
+        document.addEventListener('DOMContentLoaded', function() {
+            // Sélectionner toutes les images des sections : expertise-images, service-image, portfolio-item img
+            const images = document.querySelectorAll('.expertise-images img, .service-image img, .portfolio-item img');
+            images.forEach(img => {
+                img.style.cursor = 'pointer';
+                img.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    const lightbox = document.getElementById('lightbox');
+                    const lightboxImg = document.getElementById('lightboxImg');
+                    lightboxImg.src = this.src;
+                    lightbox.classList.add('active');
+                });
+            });
+
+            // Fermeture de la lightbox
+            const lightbox = document.getElementById('lightbox');
+            const closeBtn = document.getElementById('lightboxClose');
+            const closeLightbox = () => lightbox.classList.remove('active');
+
+            closeBtn.addEventListener('click', closeLightbox);
+            lightbox.addEventListener('click', function(e) {
+                if (e.target === this) closeLightbox();
+            });
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') closeLightbox();
+            });
+        });
     </script>
 </body>
 </html>
