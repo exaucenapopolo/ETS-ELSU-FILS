@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ETS ELSU & FILS | Expertise BTP & Services à Bertoua</title>
-    <meta name="description" content="ETS ELSU & FILS, votre partenaire de confiance en BTP, construction, réhabilitation et prestations de services à Bertoua, Cameroun.">
-    
-    <!-- Polices Google pour un rendu Premium -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-    
+    <meta name="description" content="ETS ELSU & FILS, votre partenaire de confiance en BTP, construction, réhabilitation et prestations de services à Bertoua, Cameroun." />
+
+    <!-- Polices Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" />
+
     <style>
         /* ================= VARIABLES ================= */
         :root {
-            --primary: #0a192f;      /* Bleu nuit très corporate */
-            --secondary: #ff8c00;    /* Orange travaux publics vif */
-            --accent: #172a45;       /* Bleu nuit plus clair pour les fonds */
+            --primary: #0a192f;
+            --secondary: #ff8c00;
+            --accent: #172a45;
             --text-dark: #333333;
             --text-light: #8892b0;
             --white: #ffffff;
@@ -24,141 +24,577 @@
         }
 
         /* ================= RESET ET TYPOGRAPHIE ================= */
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Open Sans', sans-serif; color: var(--text-dark); line-height: 1.6; background-color: var(--white); overflow-x: hidden; }
-        h1, h2, h3, h4, .font-title { font-family: 'Montserrat', sans-serif; color: var(--primary); }
-        a { text-decoration: none; color: inherit; transition: 0.3s; }
-        ul { list-style: none; }
-        .container { width: 90%; max-width: 1300px; margin: 0 auto; }
-        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            background-color: var(--white);
+            overflow-x: hidden;
+        }
+        h1,
+        h2,
+        h3,
+        h4,
+        .font-title {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--primary);
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: 0.3s;
+        }
+        ul {
+            list-style: none;
+        }
+        .container {
+            width: 90%;
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
         /* ================= BOUTONS ================= */
-        .btn { display: inline-block; padding: 14px 28px; background-color: var(--secondary); color: var(--white); font-weight: 700; font-family: 'Montserrat', sans-serif; text-transform: uppercase; letter-spacing: 1px; border: 2px solid var(--secondary); cursor: pointer; transition: 0.3s; border-radius: 3px; }
-        .btn:hover { background-color: transparent; color: var(--secondary); }
-        .btn-dark { background-color: var(--primary); border-color: var(--primary); }
-        .btn-dark:hover { background-color: transparent; color: var(--primary); }
+        .btn {
+            display: inline-block;
+            padding: 14px 28px;
+            background-color: var(--secondary);
+            color: var(--white);
+            font-weight: 700;
+            font-family: 'Montserrat', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: 2px solid var(--secondary);
+            cursor: pointer;
+            transition: 0.3s;
+            border-radius: 3px;
+        }
+        .btn:hover {
+            background-color: transparent;
+            color: var(--secondary);
+        }
+        .btn-dark {
+            background-color: var(--primary);
+            border-color: var(--primary);
+        }
+        .btn-dark:hover {
+            background-color: transparent;
+            color: var(--primary);
+        }
+        .btn-outline-light {
+            background: transparent;
+            border-color: var(--white);
+            color: var(--white);
+        }
+        .btn-outline-light:hover {
+            background: var(--white);
+            color: var(--primary);
+        }
 
-        /* ================= HEADER (EN-TÊTE FLOTTANT) ================= */
-        header { position: fixed; top: 0; width: 100%; z-index: 1000; background-color: rgba(255, 255, 255, 0.95); box-shadow: 0 2px 20px rgba(0,0,0,0.1); transition: 0.4s; padding: 15px 0; }
-        header.scrolled { padding: 10px 0; background-color: var(--white); }
-        .navbar { display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-size: 26px; font-weight: 800; font-family: 'Montserrat', sans-serif; color: var(--primary); }
-        .logo span { color: var(--secondary); }
-        .nav-links { display: flex; gap: 25px; align-items: center; }
-        .nav-links li a { font-weight: 600; font-size: 14px; text-transform: uppercase; color: var(--primary); }
-        .nav-links li a:hover { color: var(--secondary); }
-        .menu-toggle { display: none; font-size: 28px; cursor: pointer; color: var(--primary); }
+        /* ================= HEADER ================= */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            transition: 0.4s;
+            padding: 15px 0;
+        }
+        header.scrolled {
+            padding: 10px 0;
+            background-color: var(--white);
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 26px;
+            font-weight: 800;
+            font-family: 'Montserrat', sans-serif;
+            color: var(--primary);
+        }
+        .logo span {
+            color: var(--secondary);
+        }
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+        }
+        .nav-links li a {
+            font-weight: 600;
+            font-size: 14px;
+            text-transform: uppercase;
+            color: var(--primary);
+        }
+        .nav-links li a:hover {
+            color: var(--secondary);
+        }
+        .menu-toggle {
+            display: none;
+            font-size: 28px;
+            cursor: pointer;
+            color: var(--primary);
+        }
 
-        /* ================= HERO SECTION (BANNIÈRE PRINCIPALE) ================= */
-        .hero { position: relative; height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; color: var(--white); background: linear-gradient(rgba(10, 25, 47, 0.85), rgba(10, 25, 47, 0.7)), url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat; }
-        .hero-content { z-index: 2; max-width: 900px; padding-top: 80px; }
-        .hero h1 { font-size: 4rem; color: var(--white); text-transform: uppercase; line-height: 1.1; margin-bottom: 20px; text-shadow: 2px 2px 10px rgba(0,0,0,0.5); }
-        .hero h1 span { color: var(--secondary); }
-        .hero p { font-size: 1.3rem; margin-bottom: 40px; font-weight: 400; color: #e6f1ff; }
-        .hero-buttons { display: flex; gap: 20px; justify-content: center; }
+        /* ================= HERO ================= */
+        .hero {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            background: linear-gradient(rgba(10, 25, 47, 0.85), rgba(10, 25, 47, 0.7)),
+                url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+        }
+        .hero-content {
+            z-index: 2;
+            max-width: 900px;
+            padding-top: 80px;
+        }
+        .hero h1 {
+            font-size: 4rem;
+            color: var(--white);
+            text-transform: uppercase;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+        }
+        .hero h1 span {
+            color: var(--secondary);
+        }
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 40px;
+            font-weight: 400;
+            color: #e6f1ff;
+        }
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
 
-        /* ================= BARRE DE STATISTIQUES (ANIMÉE) ================= */
-        .stats-bar { background-color: var(--secondary); margin-top: -50px; position: relative; z-index: 10; border-radius: 5px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
-        .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); text-align: center; padding: 30px; }
-        .stat-item { border-right: 1px solid rgba(255,255,255,0.3); color: var(--white); }
-        .stat-item:last-child { border-right: none; }
-        .stat-item h3 { font-size: 2.5rem; color: var(--white); margin-bottom: 5px; font-weight: 800; }
-        .stat-item p { font-weight: 600; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 1px; }
+        /* ================= STATS BAR ================= */
+        .stats-bar {
+            background-color: var(--secondary);
+            margin-top: -50px;
+            position: relative;
+            z-index: 10;
+            border-radius: 5px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            text-align: center;
+            padding: 30px;
+        }
+        .stat-item {
+            border-right: 1px solid rgba(255, 255, 255, 0.3);
+            color: var(--white);
+        }
+        .stat-item:last-child {
+            border-right: none;
+        }
+        .stat-item h3 {
+            font-size: 2.5rem;
+            color: var(--white);
+            margin-bottom: 5px;
+            font-weight: 800;
+        }
+        .stat-item p {
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
 
-        /* ================= TITRES DE SECTIONS ================= */
-        .section-padding { padding: 100px 0; }
-        .section-header { text-align: center; margin-bottom: 60px; }
-        .section-header span { color: var(--secondary); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: 14px; display: block; margin-bottom: 10px; }
-        .section-header h2 { font-size: 2.8rem; text-transform: uppercase; margin-bottom: 20px; }
-        .section-header p { max-width: 700px; margin: 0 auto; color: var(--text-light); }
+        /* ================= SECTIONS ================= */
+        .section-padding {
+            padding: 100px 0;
+        }
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        .section-header span {
+            color: var(--secondary);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 14px;
+            display: block;
+            margin-bottom: 10px;
+        }
+        .section-header h2 {
+            font-size: 2.8rem;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+        .section-header p {
+            max-width: 700px;
+            margin: 0 auto;
+            color: var(--text-light);
+        }
 
-        /* ================= NOTRE EXPERTISE (BTP & INGENIERIE) ================= */
-        .expertise-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
-        .expertise-images { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
-        .expertise-images img { width: 100%; height: 250px; object-fit: cover; border-radius: 5px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
-        .expertise-images img:nth-child(1) { transform: translateY(-20px); }
-        .expertise-text h3 { font-size: 2rem; margin-bottom: 20px; }
-        .expertise-text p { margin-bottom: 20px; color: #555; }
-        .features-list { margin-top: 30px; }
-        .features-list li { display: flex; align-items: center; gap: 15px; margin-bottom: 15px; font-weight: 600; font-family: 'Montserrat', sans-serif; }
-        .features-list li::before { content: '✔'; color: var(--secondary); font-size: 20px; font-weight: bold; }
+        /* ================= EXPERTISE ================= */
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+        .expertise-images {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+        .expertise-images img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        .expertise-images img:nth-child(1) {
+            transform: translateY(-20px);
+        }
+        .expertise-text h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        .expertise-text p {
+            margin-bottom: 20px;
+            color: #555;
+        }
+        .features-list {
+            margin-top: 30px;
+        }
+        .features-list li {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+            font-weight: 600;
+            font-family: 'Montserrat', sans-serif;
+        }
+        .features-list li::before {
+            content: '✔';
+            color: var(--secondary);
+            font-size: 20px;
+            font-weight: bold;
+        }
 
-        /* ================= TOUS NOS SERVICES (GRILLE COMPLÈTE) ================= */
-        .bg-gray { background-color: var(--bg-light); }
-        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
-        .service-box { background: var(--white); padding: 40px 30px; border-radius: 5px; transition: 0.4s; border-bottom: 4px solid transparent; box-shadow: 0 5px 20px rgba(0,0,0,0.05); }
-        .service-box:hover { transform: translateY(-10px); border-bottom-color: var(--secondary); box-shadow: 0 15px 30px rgba(0,0,0,0.15); }
-        .service-icon { background: rgba(255, 140, 0, 0.1); width: 70px; height: 70px; display: flex; align-items: center; justify-content: center; border-radius: 50%; margin-bottom: 25px; }
-        /* Simulation d'icônes avec des émojis pour le code source unique (en prod, on utiliserait FontAwesome) */
-        .service-icon span { font-size: 30px; }
-        .service-box h4 { font-size: 1.3rem; margin-bottom: 15px; text-transform: uppercase; }
-        .service-box p { color: #666; font-size: 0.95rem; margin-bottom: 20px; }
-        .service-link { font-weight: 700; color: var(--primary); text-transform: uppercase; font-size: 13px; letter-spacing: 1px; display: flex; align-items: center; gap: 5px; }
-        .service-link:hover { color: var(--secondary); }
+        /* ================= SERVICES (CARTES AVEC IMAGES) ================= */
+        .bg-gray {
+            background-color: var(--bg-light);
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+        .service-box {
+            background: var(--white);
+            padding: 40px 30px;
+            border-radius: 5px;
+            transition: 0.4s;
+            border-bottom: 4px solid transparent;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            text-align: center;
+        }
+        .service-box:hover {
+            transform: translateY(-10px);
+            border-bottom-color: var(--secondary);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px auto;
+            border-radius: 50%;
+            overflow: hidden;
+            background: rgba(255, 140, 0, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .service-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s;
+        }
+        .service-box:hover .service-icon img {
+            transform: scale(1.1);
+        }
+        .service-box h4 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+        .service-box p {
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+        .service-link {
+            font-weight: 700;
+            color: var(--primary);
+            text-transform: uppercase;
+            font-size: 13px;
+            letter-spacing: 1px;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .service-link:hover {
+            color: var(--secondary);
+        }
 
-        /* ================= PORTFOLIO / RÉALISATIONS ================= */
-        .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 20px; }
-        .portfolio-item { position: relative; overflow: hidden; border-radius: 5px; height: 300px; }
-        .portfolio-item img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
-        .portfolio-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(10, 25, 47, 0.9), transparent); opacity: 0; transition: 0.5s; display: flex; flex-direction: column; justify-content: flex-end; padding: 30px; }
-        .portfolio-item:hover img { transform: scale(1.1); }
-        .portfolio-item:hover .portfolio-overlay { opacity: 1; }
-        .portfolio-overlay h4 { color: var(--white); font-size: 1.5rem; margin-bottom: 5px; transform: translateY(20px); transition: 0.4s; }
-        .portfolio-overlay p { color: var(--secondary); font-weight: 600; text-transform: uppercase; font-size: 0.9rem; transform: translateY(20px); transition: 0.4s; transition-delay: 0.1s; }
-        .portfolio-item:hover .portfolio-overlay h4, .portfolio-item:hover .portfolio-overlay p { transform: translateY(0); }
+        /* ================= PORTFOLIO ================= */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 20px;
+        }
+        .portfolio-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 5px;
+            height: 300px;
+        }
+        .portfolio-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.5s;
+        }
+        .portfolio-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(10, 25, 47, 0.9), transparent);
+            opacity: 0;
+            transition: 0.5s;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 30px;
+        }
+        .portfolio-item:hover img {
+            transform: scale(1.1);
+        }
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
+        }
+        .portfolio-overlay h4 {
+            color: var(--white);
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+            transform: translateY(20px);
+            transition: 0.4s;
+        }
+        .portfolio-overlay p {
+            color: var(--secondary);
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            transform: translateY(20px);
+            transition: 0.4s;
+            transition-delay: 0.1s;
+        }
+        .portfolio-item:hover .portfolio-overlay h4,
+        .portfolio-item:hover .portfolio-overlay p {
+            transform: translateY(0);
+        }
+        /* cache pour les éléments supplémentaires */
+        .portfolio-item.hidden {
+            display: none;
+        }
 
-        /* ================= SECTION DEVIS RAPIDE (FORMULAIRE) ================= */
-        .cta-section { background: var(--primary); padding: 80px 0; color: var(--white); }
-        .cta-container { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
-        .cta-text h2 { color: var(--white); font-size: 2.5rem; margin-bottom: 20px; }
-        .cta-text p { color: var(--text-light); margin-bottom: 30px; font-size: 1.1rem; }
-        .quick-form { background: var(--white); padding: 40px; border-radius: 5px; }
-        .form-group { margin-bottom: 20px; }
-        .form-control { width: 100%; padding: 15px; border: 1px solid #ddd; border-radius: 3px; font-family: inherit; font-size: 1rem; }
-        .form-control:focus { outline: none; border-color: var(--secondary); }
-        .quick-form .btn { width: 100%; }
+        /* ================= CTA / DEVIS ================= */
+        .cta-section {
+            background: var(--primary);
+            padding: 80px 0;
+            color: var(--white);
+        }
+        .cta-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+        .cta-text h2 {
+            color: var(--white);
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        .cta-text p {
+            color: var(--text-light);
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+        }
+        .quick-form {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 5px;
+        }
+        .quick-form h3 {
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-control {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            font-family: inherit;
+            font-size: 1rem;
+        }
+        .form-control:focus {
+            outline: none;
+            border-color: var(--secondary);
+        }
+        .quick-form .btn {
+            width: 100%;
+        }
 
         /* ================= FOOTER ================= */
-        footer { background-color: #06101e; color: #8892b0; padding: 80px 0 20px; }
-        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; margin-bottom: 60px; }
-        .footer-col h4 { color: var(--white); font-size: 1.2rem; margin-bottom: 25px; text-transform: uppercase; letter-spacing: 1px; }
-        .footer-col p { margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
-        .footer-col ul li { margin-bottom: 12px; }
-        .footer-col ul li a { display: inline-block; transition: 0.3s; }
-        .footer-col ul li a:hover { color: var(--secondary); transform: translateX(5px); }
-        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.05); padding-top: 25px; text-align: center; font-size: 0.9rem; }
-        .footer-bottom a { color: var(--secondary); font-weight: 700; }
+        footer {
+            background-color: #06101e;
+            color: #8892b0;
+            padding: 80px 0 20px;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+        .footer-col h4 {
+            color: var(--white);
+            font-size: 1.2rem;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .footer-col p {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .footer-col ul li {
+            margin-bottom: 12px;
+        }
+        .footer-col ul li a {
+            display: inline-block;
+            transition: 0.3s;
+        }
+        .footer-col ul li a:hover {
+            color: var(--secondary);
+            transform: translateX(5px);
+        }
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 25px;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+        .footer-bottom a {
+            color: var(--secondary);
+            font-weight: 700;
+        }
 
-        /* ================= ANIMATIONS CSS (SCROLL) ================= */
-        .reveal { opacity: 0; transform: translateY(40px); transition: all 0.8s cubic-bezier(0.5, 0, 0, 1); }
-        .reveal.active { opacity: 1; transform: translateY(0); }
+        /* ================= ANIMATIONS ================= */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
 
         /* ================= RESPONSIVE ================= */
         @media (max-width: 992px) {
-            .stats-grid { grid-template-columns: 1fr 1fr; gap: 20px; }
-            .stat-item { border: none; margin-bottom: 15px; }
-            .expertise-grid, .cta-container { grid-template-columns: 1fr; }
-            .hero h1 { font-size: 3rem; }
+            .stats-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 20px;
+            }
+            .stat-item {
+                border: none;
+                margin-bottom: 15px;
+            }
+            .expertise-grid,
+            .cta-container {
+                grid-template-columns: 1fr;
+            }
+            .hero h1 {
+                font-size: 3rem;
+            }
         }
         @media (max-width: 768px) {
-            .nav-links { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; width: 100%; background: var(--white); padding: 30px 0; text-align: center; box-shadow: 0 10px 15px rgba(0,0,0,0.1); }
-            .nav-links.active { display: flex; }
-            .menu-toggle { display: block; }
-            .hero h1 { font-size: 2.2rem; }
-            .hero-buttons { flex-direction: column; }
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--white);
+                padding: 30px 0;
+                text-align: center;
+                box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+            }
+            .nav-links.active {
+                display: flex;
+            }
+            .menu-toggle {
+                display: block;
+            }
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            .hero-buttons {
+                flex-direction: column;
+            }
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+            .expertise-images {
+                grid-template-columns: 1fr;
+            }
+            .expertise-images img:nth-child(1) {
+                transform: none;
+            }
         }
     </style>
 </head>
 <body>
 
-    <!-- EN-TÊTE -->
+    <!-- ================= HEADER ================= -->
     <header id="header">
         <div class="container navbar">
             <div class="logo">
                 ETS ELSU <span>& FILS</span>
             </div>
-            <div class="menu-toggle" id="mobile-menu">
-                ☰
-            </div>
+            <div class="menu-toggle" id="mobile-menu">☰</div>
             <ul class="nav-links" id="nav-links">
                 <li><a href="index.html">Accueil</a></li>
                 <li><a href="about.html">Notre Expertise</a></li>
@@ -170,7 +606,7 @@
         </div>
     </header>
 
-    <!-- BANNIÈRE HERO -->
+    <!-- ================= HERO ================= -->
     <section class="hero">
         <div class="container hero-content reveal">
             <h1>Expertise en Ingénierie & <span>Construction</span></h1>
@@ -182,7 +618,7 @@
         </div>
     </section>
 
-    <!-- BARRE DE STATISTIQUES (Flottante sur l'image) -->
+    <!-- ================= STATS ================= -->
     <div class="container">
         <div class="stats-bar reveal">
             <div class="stats-grid">
@@ -206,19 +642,19 @@
         </div>
     </div>
 
-    <!-- NOTRE EXPERTISE (Présentation Corporate) -->
+    <!-- ================= NOTRE EXPERTISE ================= -->
     <section class="section-padding">
         <div class="container expertise-grid">
             <div class="expertise-images reveal">
-                <img src="https://images.unsplash.com/photo-1541888086425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Gros oeuvre bâtiment">
-                <img src="https://images.unsplash.com/photo-1504307651254-35680f356f58?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Ingénierie BTP">
+                <!-- Images remplacées par des visuels avec des ouvriers africains -->
+                <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Chantier BTP Cameroun" />
+                <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Équipe technique sur chantier" />
             </div>
             <div class="expertise-text reveal">
                 <span style="color: var(--secondary); font-weight: bold; text-transform: uppercase; letter-spacing: 2px;">Ingénierie & BTP</span>
                 <h3>L'Excellence Opérationnelle au service de vos infrastructures</h3>
                 <p>Installée à Bertoua, <strong>ETS ELSU & FILS</strong> s'impose comme un acteur incontournable dans le secteur du Bâtiment et des Travaux Publics. Nous ne nous contentons pas de construire ; nous apportons des solutions techniques sur-mesure.</p>
                 <p>Notre capacité de mobilisation rapide, nos équipements professionnels et notre personnel rigoureux nous permettent de mener à bien les chantiers les plus complexes, de la pose des fondations jusqu'aux finitions (Gros Œuvre et Second Œuvre).</p>
-                
                 <ul class="features-list">
                     <li>Respect rigoureux des délais d'exécution</li>
                     <li>Utilisation de matériaux certifiés et durables</li>
@@ -228,7 +664,7 @@
         </div>
     </section>
 
-    <!-- TOUS NOS SERVICES DÉTAILLÉS -->
+    <!-- ================= NOS SERVICES (avec images) ================= -->
     <section id="services" class="section-padding bg-gray">
         <div class="container">
             <div class="section-header reveal">
@@ -236,51 +672,63 @@
                 <h2>Une Maîtrise Technique Globale</h2>
                 <p>Nous couvrons l'ensemble des corps d'état pour vous offrir des solutions clés en main, de la construction lourde à la maintenance technique spécialisée.</p>
             </div>
-            
+
             <div class="services-grid">
-                <!-- Service 1 : BTP -->
+                <!-- 1. Bâtiment & Gros Œuvre -->
                 <div class="service-box reveal">
-                    <div class="service-icon"><span>🏗️</span></div>
+                    <div class="service-icon">
+                        <img src="https://images.unsplash.com/photo-v-195QphDhk?auto=format&fit=crop&w=150&h=150&q=80" alt="Bâtiment" />
+                    </div>
                     <h4>Bâtiments & Gros Œuvre</h4>
                     <p>Construction, réfection et réhabilitation complète de bâtiments résidentiels, administratifs et d'écoles. Terrassement, maçonnerie, fondations et ferraillage.</p>
                     <a href="services.html" class="service-link">Détails du service →</a>
                 </div>
-                
-                <!-- Service 2 : Climatisation -->
+
+                <!-- 2. Froid & Climatisation -->
                 <div class="service-box reveal">
-                    <div class="service-icon"><span>❄️</span></div>
+                    <div class="service-icon">
+                        <img src="https://images.unsplash.com/photo-PRvyVbLwJy0?auto=format&fit=crop&w=150&h=150&q=80" alt="Climatisation" />
+                    </div>
                     <h4>Froid & Climatisation</h4>
                     <p>Étude, achat, installation professionnelle et maintenance (préventive et curative) de tous vos systèmes de climatisation et de traitement de l'air.</p>
                     <a href="services.html" class="service-link">Détails du service →</a>
                 </div>
-                
-                <!-- Service 3 : Nettoyage Industriel -->
+
+                <!-- 3. Nettoyage Industriel -->
                 <div class="service-box reveal">
-                    <div class="service-icon"><span>🧹</span></div>
+                    <div class="service-icon">
+                        <img src="https://images.unsplash.com/photo-SnKfmC1I9fU?auto=format&fit=crop&w=150&h=150&q=80" alt="Nettoyage" />
+                    </div>
                     <h4>Nettoyage Industriel</h4>
                     <p>Interventions spécialisées pour le nettoyage de fin de chantier, l'entretien des locaux industriels, bureaux professionnels et espaces commerciaux.</p>
                     <a href="services.html" class="service-link">Détails du service →</a>
                 </div>
-                
-                <!-- Service 4 : Rénovation -->
+
+                <!-- 4. Aménagement & Rénovation -->
                 <div class="service-box reveal">
-                    <div class="service-icon"><span>🔧</span></div>
+                    <div class="service-icon">
+                        <img src="https://images.unsplash.com/photo-57ldq9age5U?auto=format&fit=crop&w=150&h=150&q=80" alt="Rénovation" />
+                    </div>
                     <h4>Aménagement & Rénovation</h4>
                     <p>Travaux de second œuvre : menuiserie bois et métallique, peinture, pose de carrelage, plomberie sanitaire et rénovation d'espaces intérieurs.</p>
                     <a href="services.html" class="service-link">Détails du service →</a>
                 </div>
 
-                <!-- Service 5 : Fournitures -->
+                <!-- 5. Fournitures de Bureau -->
                 <div class="service-box reveal">
-                    <div class="service-icon"><span>📦</span></div>
+                    <div class="service-icon">
+                        <img src="https://images.unsplash.com/photo-1589998059171-988d887df646?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&h=150&q=80" alt="Fournitures" />
+                    </div>
                     <h4>Fournitures de Bureau</h4>
                     <p>Approvisionnement en matériels, mobiliers et équipements bureautiques de haute qualité pour équiper complètement vos espaces administratifs.</p>
                     <a href="services.html" class="service-link">Détails du service →</a>
                 </div>
 
-                <!-- Service 6 : Prestations Diverses -->
+                <!-- 6. Prestations Techniques -->
                 <div class="service-box reveal">
-                    <div class="service-icon"><span>🤝</span></div>
+                    <div class="service-icon">
+                        <img src="https://images.unsplash.com/photo-VLPUm5wP5Z0?auto=format&fit=crop&w=150&h=150&q=80" alt="Prestations techniques" />
+                    </div>
                     <h4>Prestations Techniques</h4>
                     <p>Services sur mesure, location d'équipements légers, maintenance générale des infrastructures et accompagnement logistique sur vos projets.</p>
                     <a href="services.html" class="service-link">Détails du service →</a>
@@ -289,45 +737,81 @@
         </div>
     </section>
 
-    <!-- PORTFOLIO RAPIDE -->
+    <!-- ================= PORTFOLIO / RÉALISATIONS ================= -->
     <section class="section-padding">
         <div class="container">
             <div class="section-header reveal">
                 <span>Nos Réalisations</span>
                 <h2>Nos Chantiers Récents</h2>
             </div>
-            
-            <div class="portfolio-grid">
+
+            <div class="portfolio-grid" id="portfolioGrid">
+                <!-- 1 -->
                 <div class="portfolio-item reveal">
-                    <img src="https://images.unsplash.com/photo-1590496793907-4783ebac3107?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Chantier de construction">
+                    <img src="https://raw.githubusercontent.com/exaucenapopolo/ETS-ELSU-FILS/refs/heads/main/images/chantier.jpg" alt="Chantier école" />
                     <div class="portfolio-overlay">
-                        <h4>Réhabilitation d'École</h4>
-                        <p>Gros œuvre & Menuiserie</p>
+                        <h4>Chantier d'École</h4>
+                        <p>Construction terminée</p>
                     </div>
                 </div>
+                <!-- 2 -->
                 <div class="portfolio-item reveal">
-                    <img src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Installation Climatisation">
+                    <img src="https://raw.githubusercontent.com/exaucenapopolo/ETS-ELSU-FILS/refs/heads/main/images/climatisation.jpg" alt="Installation climatisation" />
                     <div class="portfolio-overlay">
-                        <h4>Installation Réseau CVC</h4>
-                        <p>Climatisation & Froid</p>
+                        <h4>Installation Climatisation</h4>
+                        <p>Résidence client</p>
                     </div>
                 </div>
+                <!-- 3 -->
                 <div class="portfolio-item reveal">
-                    <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Nettoyage fin de chantier">
+                    <img src="https://raw.githubusercontent.com/exaucenapopolo/ETS-ELSU-FILS/refs/heads/main/images/ecole.jpg" alt="École rénovée" />
                     <div class="portfolio-overlay">
-                        <h4>Livraison Bâtiment Administratif</h4>
-                        <p>Nettoyage industriel</p>
+                        <h4>Rénovation d'École</h4>
+                        <p>Second œuvre</p>
+                    </div>
+                </div>
+                <!-- 4 (cachée au départ) -->
+                <div class="portfolio-item reveal hidden" data-extra>
+                    <img src="https://raw.githubusercontent.com/exaucenapopolo/ETS-ELSU-FILS/refs/heads/main/images/maison.jpg" alt="Maison livrée" />
+                    <div class="portfolio-overlay">
+                        <h4>Maison Clé en Main</h4>
+                        <p>De la fondation à la livraison</p>
+                    </div>
+                </div>
+                <!-- 5 (cachée) -->
+                <div class="portfolio-item reveal hidden" data-extra>
+                    <img src="https://raw.githubusercontent.com/exaucenapopolo/ETS-ELSU-FILS/refs/heads/main/images/peinture.jpg" alt="Peinture école" />
+                    <div class="portfolio-overlay">
+                        <h4>Peinture & Rénovation</h4>
+                        <p>École remise à neuf</p>
+                    </div>
+                </div>
+                <!-- 6 (cachée) -->
+                <div class="portfolio-item reveal hidden" data-extra>
+                    <img src="https://raw.githubusercontent.com/exaucenapopolo/ETS-ELSU-FILS/refs/heads/main/images/salon.jpg" alt="Salon aménagé" />
+                    <div class="portfolio-overlay">
+                        <h4>Aménagement Salon</h4>
+                        <p>Fourniture de mobilier</p>
+                    </div>
+                </div>
+                <!-- 7 (cachée) -->
+                <div class="portfolio-item reveal hidden" data-extra>
+                    <img src="https://raw.githubusercontent.com/exaucenapopolo/ETS-ELSU-FILS/refs/heads/main/images/toit.jpg" alt="Toiture maison" />
+                    <div class="portfolio-overlay">
+                        <h4>Toiture & Charpente</h4>
+                        <p>Maison en construction</p>
                     </div>
                 </div>
             </div>
-            
-            <div style="text-align: center; margin-top: 50px;" class="reveal">
+
+            <div style="text-align: center; margin-top: 30px;" class="reveal">
+                <button id="showMoreBtn" class="btn btn-dark" style="margin-right: 15px;">Afficher plus de projets</button>
                 <a href="portfolio.html" class="btn">Voir toute la galerie</a>
             </div>
         </div>
     </section>
 
-    <!-- DEMANDE DE DEVIS EXPRESS -->
+    <!-- ================= DEMANDE DE DEVIS EXPRESS ================= -->
     <section id="devis" class="cta-section reveal">
         <div class="container cta-container">
             <div class="cta-text">
@@ -340,33 +824,24 @@
                 </ul>
             </div>
             <div class="quick-form">
-                <h3 style="color: var(--primary); margin-bottom: 20px;">Formulaire de Devis Express</h3>
-                <form action="#" method="POST">
+                <h3>Formulaire de Devis Express</h3>
+                <form id="devisForm" onsubmit="return false;">
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Votre Nom ou Entreprise" required>
+                        <input type="text" id="nom" class="form-control" placeholder="Votre Nom ou Entreprise" required />
                     </div>
                     <div class="form-group">
-                        <input type="tel" class="form-control" placeholder="Numéro de Téléphone (ex: WhatsApp)" required>
+                        <input type="text" id="serviceInput" class="form-control" placeholder="Service souhaité (ex: BTP, Climatisation, Nettoyage, Fournitures...)" required />
                     </div>
                     <div class="form-group">
-                        <select class="form-control" required>
-                            <option value="">Sélectionnez un service...</option>
-                            <option value="btp">Construction / Réhabilitation</option>
-                            <option value="climatisation">Climatisation & Froid</option>
-                            <option value="nettoyage">Nettoyage Industriel</option>
-                            <option value="autre">Fournitures / Autre</option>
-                        </select>
+                        <textarea id="description" class="form-control" rows="4" placeholder="Décrivez brièvement votre projet (optionnel)"></textarea>
                     </div>
-                    <div class="form-group">
-                        <textarea class="form-control" rows="4" placeholder="Décrivez brièvement votre projet..." required></textarea>
-                    </div>
-                    <button type="submit" class="btn">Envoyer ma demande</button>
+                    <button type="button" class="btn" onclick="sendWhatsApp()">Envoyer ma demande</button>
                 </form>
             </div>
         </div>
     </section>
 
-    <!-- FOOTER -->
+    <!-- ================= FOOTER ================= -->
     <footer>
         <div class="container">
             <div class="footer-grid">
@@ -386,9 +861,8 @@
                 <div class="footer-col">
                     <h4>Contact Direct</h4>
                     <p>📍 Siège social : Bertoua, Cameroun</p>
-                    <p>📞 Téléphone : +237 XXX XXX XXX</p>
-                    <p>💬 WhatsApp : +237 XXX XXX XXX</p>
-                    <p>✉️ Email : contact@etselsu.com</p>
+                    <p>📞 Téléphone / WhatsApp : <a href="tel:+237699719840" style="color: var(--secondary);">+237 6 99 71 98 40</a></p>
+                    <p>✉️ Email : <a href="mailto:Contact@elsu.site" style="color: var(--secondary);">Contact@elsu.site</a></p>
                 </div>
             </div>
             <div class="footer-bottom">
@@ -398,17 +872,16 @@
         </div>
     </footer>
 
-    <!-- JAVASCRIPT -->
+    <!-- ================= JAVASCRIPT ================= -->
     <script>
         // 1. Menu Mobile
         const mobileMenu = document.getElementById('mobile-menu');
         const navLinks = document.getElementById('nav-links');
-
         mobileMenu.addEventListener('click', () => {
             navLinks.classList.toggle('active');
         });
 
-        // 2. Header flottant avec changement de style au scroll
+        // 2. Header flottant
         window.addEventListener('scroll', () => {
             const header = document.getElementById('header');
             if (window.scrollY > 50) {
@@ -418,33 +891,30 @@
             }
         });
 
-        // 3. Animations avancées au défilement (Scroll Reveal)
+        // 3. Scroll Reveal
         function reveal() {
-            var reveals = document.querySelectorAll(".reveal");
-            for (var i = 0; i < reveals.length; i++) {
-                var windowHeight = window.innerHeight;
-                var elementTop = reveals[i].getBoundingClientRect().top;
-                var elementVisible = 120; // Déclenchement fluide
-                
+            const reveals = document.querySelectorAll(".reveal");
+            for (let i = 0; i < reveals.length; i++) {
+                const windowHeight = window.innerHeight;
+                const elementTop = reveals[i].getBoundingClientRect().top;
+                const elementVisible = 120;
                 if (elementTop < windowHeight - elementVisible) {
                     reveals[i].classList.add("active");
                 }
             }
         }
         window.addEventListener("scroll", reveal);
-        reveal(); // Premier déclenchement immédiat
+        reveal();
 
-        // 4. Animation dynamique des compteurs statistiques
+        // 4. Compteurs statistiques
         const counters = document.querySelectorAll('.counter');
-        const speed = 150; // Vitesse optimale pour le rendu pro
-
+        const speed = 150;
         const animateCounters = () => {
             counters.forEach(counter => {
                 const updateCount = () => {
                     const target = +counter.getAttribute('data-target');
                     const count = +counter.innerText;
                     const inc = target / speed;
-
                     if (count < target) {
                         counter.innerText = Math.ceil(count + inc);
                         setTimeout(updateCount, 15);
@@ -452,21 +922,64 @@
                         counter.innerText = target;
                     }
                 };
-                
-                // Le compteur ne démarre que lorsqu'il apparaît à l'écran
-                let observer = new IntersectionObserver(function(entries, observer) {
+                let observer = new IntersectionObserver(function(entries) {
                     entries.forEach(entry => {
-                        if(entry.isIntersecting) {
+                        if (entry.isIntersecting) {
                             updateCount();
-                            observer.unobserve(entry.target); // Joue une seule fois
+                            observer.unobserve(entry.target);
                         }
                     });
                 }, { threshold: 0.5 });
-                
                 observer.observe(counter);
             });
         };
         animateCounters();
+
+        // 5. Portfolio "Afficher plus"
+        const showMoreBtn = document.getElementById('showMoreBtn');
+        const extraItems = document.querySelectorAll('.portfolio-item[data-extra]');
+        let expanded = false;
+
+        showMoreBtn.addEventListener('click', function() {
+            if (!expanded) {
+                extraItems.forEach(item => item.classList.remove('hidden'));
+                this.textContent = 'Réduire la galerie';
+                expanded = true;
+            } else {
+                extraItems.forEach(item => item.classList.add('hidden'));
+                this.textContent = 'Afficher plus de projets';
+                expanded = false;
+            }
+        });
+
+        // 6. Formulaire de devis → Envoi WhatsApp
+        function sendWhatsApp() {
+            const nom = document.getElementById('nom').value.trim();
+            const service = document.getElementById('serviceInput').value.trim();
+            const description = document.getElementById('description').value.trim();
+
+            if (!nom || !service) {
+                alert('Veuillez remplir votre nom et le service souhaité.');
+                return;
+            }
+
+            // Construction du message
+            let message = 'Bonjour ETS ELSU & FILS, je souhaite obtenir un devis pour le service suivant :\n\n';
+            message += `▪️ Nom / Entreprise : ${nom}\n`;
+            message += `▪️ Service souhaité : ${service}\n`;
+            if (description) {
+                message += `▪️ Description du projet : ${description}\n`;
+            }
+            message += '\nMerci de me contacter pour plus d\'informations.';
+
+            // Encodage pour URL
+            const encoded = encodeURIComponent(message);
+            const phone = '237699719840'; // numéro WhatsApp
+            const url = `https://wa.me/${phone}?text=${encoded}`;
+
+            // Ouverture dans un nouvel onglet
+            window.open(url, '_blank');
+        }
     </script>
 </body>
 </html>
